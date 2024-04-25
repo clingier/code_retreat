@@ -1,12 +1,16 @@
-pub fn add_two(a: i32) -> i32 {
-    a + 2
+pub mod object;
+
+#[derive(Copy, Clone)]
+enum State {
+    ALIVE,
+    DEAD,
 }
 
-#[cfg(test)]
-mod unit_tests {
+struct Coordinate {
+    x: usize,
+    y: usize,
+}
 
-    #[test]
-    fn add_two() {
-      assert_eq!(7, super::add_two(5));
-    }
+struct Grid {
+    cells: Vec<Vec<State>>,
 }

@@ -1,11 +1,15 @@
 extern crate scaffold;
 
 #[cfg(test)]
-mod integration_tests {
-    use scaffold::add_two;
+mod unit_tests {
 
-    #[test]
-    fn it_works() {
-        assert_eq!(4, add_two(2));
+    use scaffold::object::GameOfLifeGrid;
+    fn fixture_gol_grid() {}
+    fn test_gol_can_initialize_with_a_2d_list_containing_any_type() {
+        let mut grid = Vec::new();
+        for _ in 0..15 {
+            grid.push(vec![Some(""); 10])
+        }
+       let _gol = GameOfLifeGrid::new(grid);
     }
 }
